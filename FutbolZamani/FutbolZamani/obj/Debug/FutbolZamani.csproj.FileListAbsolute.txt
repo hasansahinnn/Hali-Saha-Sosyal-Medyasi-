@@ -1,0 +1,174 @@
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\ApplicationInsights.config
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\roslyn\csc.exe
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\roslyn\System.Collections.Immutable.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\roslyn\vbc.exe
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\roslyn\VBCSCompiler.exe
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\roslyn\VBCSCompiler.exe.config
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\FutbolZamani.dll.config
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\FutbolZamani.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\FutbolZamani.pdb
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.AI.Web.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.AI.WindowsServer.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.ApplicationInsights.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Newtonsoft.Json.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Net.Http.Formatting.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Helpers.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Http.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Http.WebHost.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Mvc.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Razor.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.Deployment.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.Razor.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.AI.Web.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.AI.WindowsServer.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.ApplicationInsights.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Razor.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.Deployment.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.Razor.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Helpers.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Mvc.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Newtonsoft.Json.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Net.Http.Formatting.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Http.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\bin\System.Web.Http.WebHost.xml
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\obj\Debug\FutbolZamani.csprojResolveAssemblyReference.cache
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\obj\Debug\FutbolZamani.dll
+c:\users\hamdi\documents\visual studio 2015\Projects\FutbolZamani\FutbolZamani\obj\Debug\FutbolZamani.pdb
+C:\Users\hamdi\Documents\Visual Studio 2015\Projects\FutbolZamani\FutbolZamani\bin\EntityFramework.dll
+C:\Users\hamdi\Documents\Visual Studio 2015\Projects\FutbolZamani\FutbolZamani\bin\EntityFramework.SqlServer.dll
+C:\Users\hamdi\Documents\Visual Studio 2015\Projects\FutbolZamani\FutbolZamani\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\hamdi\Documents\Visual Studio 2015\Projects\FutbolZamani\FutbolZamani\bin\EntityFramework.xml
+C:\Users\hamdi\Documents\Visual Studio 2015\Projects\FutbolZamani\FutbolZamani\bin\EntityFramework.SqlServer.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\ApplicationInsights.config
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\roslyn\csc.exe
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\roslyn\vbc.exe
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\roslyn\VBCSCompiler.exe
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\FutbolZamani.dll.config
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\FutbolZamani.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\FutbolZamani.pdb
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\EntityFramework.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\EntityFramework.SqlServer.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.AI.Web.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.ApplicationInsights.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Newtonsoft.Json.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Net.Http.Formatting.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Helpers.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Http.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Http.WebHost.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Mvc.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Razor.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.Deployment.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.Razor.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\EntityFramework.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\EntityFramework.SqlServer.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.AI.Web.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.ApplicationInsights.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Razor.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.Deployment.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.Razor.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Helpers.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Mvc.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\Newtonsoft.Json.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Net.Http.Formatting.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Http.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\bin\System.Web.Http.WebHost.xml
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\obj\Debug\FutbolZamani.csprojResolveAssemblyReference.cache
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\obj\Debug\FutbolZamani.dll
+C:\Users\inoSoma\Desktop\Yeni klasör\FutbolZamani\FutbolZamani\obj\Debug\FutbolZamani.pdb
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\ApplicationInsights.config
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\roslyn\csc.exe
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\roslyn\System.Collections.Immutable.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\roslyn\System.Reflection.Metadata.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\roslyn\vbc.exe
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\roslyn\VBCSCompiler.exe
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\roslyn\VBCSCompiler.exe.config
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\FutbolZamani.dll.config
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\FutbolZamani.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\FutbolZamani.pdb
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\EntityFramework.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\EntityFramework.SqlServer.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.AI.Agent.Intercept.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.AI.DependencyCollector.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.AI.Web.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.AI.WindowsServer.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.ApplicationInsights.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.Web.Infrastructure.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Newtonsoft.Json.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Net.Http.Formatting.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Helpers.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Http.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Http.WebHost.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Mvc.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Razor.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.Deployment.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.Razor.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\EntityFramework.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\EntityFramework.SqlServer.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.AI.DependencyCollector.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.AI.Web.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.AI.WindowsServer.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.ApplicationInsights.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Razor.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.Deployment.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Webpages.Razor.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Helpers.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Mvc.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\Newtonsoft.Json.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Net.Http.Formatting.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Http.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\bin\System.Web.Http.WebHost.xml
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\obj\Debug\FutbolZamani.csprojResolveAssemblyReference.cache
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\obj\Debug\FutbolZamani.dll
+D:\FutbolSagasi\site\FutbolZamani\FutbolZamani\obj\Debug\FutbolZamani.pdb

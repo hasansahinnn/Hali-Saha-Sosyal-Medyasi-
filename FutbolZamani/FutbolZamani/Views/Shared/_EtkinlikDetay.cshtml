@@ -1,0 +1,85 @@
+﻿@using FutbolZamani.Models;
+@model List<Kullanici>
+@{
+    Kullanici k = Session["Kullanici"] as Kullanici;
+    FutbolZamaniEntities1 db = new FutbolZamaniEntities1();
+    int etkinlikid = Convert.ToInt32(Session["etkinlikid"]);
+    Etkinlik etk = db.Etkinlik.Find(etkinlikid);
+    bool yetki = false;
+    if (etk.KullaniciID == k.KullaniciID)
+    {
+        yetki = true;
+    }
+}
+<br/>
+<div class="box-body table-responsive no-padding">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+                
+            <th><i class="fa fa-user"></i> Ad-Soyad</th>
+            <th><i class="fa fa-phone"></i>Telefon</th>
+            <th><i class="fa fa-home"></i>Adres2</th>
+            <th><i class="fa fa-mail-forward"></i> Katılma Durumu</th>
+            @if (yetki == true)
+            {
+                <th><i class="fa fa-sign-in"></i> Kullanıcı İşlem</th>
+            }
+        </tr>
+        </thead>
+        <tbody>
+
+            <!-- Foreach Kullan -->
+            @{
+
+
+                foreach (var item in Model)
+                {
+                    EtkinlikKatilim e = db.EtkinlikKatilim.Where(x => x.KullaniciID == item.KullaniciID && x.EtkinlikID == etkinlikid).FirstOrDefault();
+                    if (e != null)
+                    {
+                    if (yetki == true || e.Durum == 2)
+                    {
+
+                        <tr>
+                            <td>@item.KullaniciAd @item.KullaniciSoyad </td>
+                            <td>@item.KullaniciTel</td>
+                            <td>@item.KullaniciAdres</td>
+
+                            @if (e.Durum == 0 && yetki == true)
+                            {
+                                <td>Katılma İsteği</td>
+                                <td>
+                                    @Ajax.ActionLink("Kabul Et", "EtkinlikIslem", "Home", new { id = 1, kulid = item.KullaniciID, etkinlikid = etkinlikid }, new AjaxOptions { HttpMethod = "GET", OnSuccess = "Mesaj" }, new { @class = "btn btn-success" })
+                                    @Ajax.ActionLink("Kabul Etme", "EtkinlikIslem", "Home", new { id = 0, kulid = item.KullaniciID, etkinlikid = etkinlikid }, new AjaxOptions { HttpMethod = "GET", OnSuccess = "Mesaj" }, new { @class = "btn btn-warning" })
+                                </td>
+                            }
+
+                            else if (e.Durum == 2)
+                            {
+                                <td style="color:green">Katıldı</td>
+                                if (yetki == true && item.KullaniciID!=k.KullaniciID)
+                                {
+                                    <td>
+                                        @Ajax.ActionLink("Çıkar", "EtkinlikIslem", "Home", new { id = 0, kulid = item.KullaniciID, etkinlikid = etkinlikid }, new AjaxOptions { HttpMethod = "GET", OnSuccess = "Mesaj" }, new { @class = "btn btn-danger" })
+                                    </td>
+                                }
+                            }
+                            else if (e.Durum == 3 && yetki == true)
+                            {
+                                <td style="color:slategrey">Davet Yollandı</td>
+                                <td>
+                                    @Ajax.ActionLink("Listeden Çıkar", "EtkinlikIslem", "Home", new { id = 0, kulid = item.KullaniciID, etkinlikid = etkinlikid }, new AjaxOptions { HttpMethod = "GET", OnSuccess = "Mesaj" }, new { @class = "btn btn-danger" })
+                                </td>
+                            }
+                        </tr>
+                        }
+                    }
+
+                }
+            }
+
+        </tbody>
+    </table>
+</div>
+

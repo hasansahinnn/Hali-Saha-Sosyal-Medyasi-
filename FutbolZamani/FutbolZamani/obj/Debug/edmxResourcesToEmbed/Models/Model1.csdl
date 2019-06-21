@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FutbolZamaniModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Arkadas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciID" Type="Int32" />
+    <Property Name="ArkadasID" Type="Int32" />
+    <Property Name="Durum" Type="Int32" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK_Arkadas_Kullanici" FromRole="Arkadas" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="Etkinlik">
+    <Key>
+      <PropertyRef Name="EtkinlikID" />
+    </Key>
+    <Property Name="EtkinlikID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EtkinlikAdres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EtkinlikTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciID" Type="Int32" />
+    <Property Name="EtkinlikKontenjan" Type="Int32" />
+    <Property Name="EtkinlikBilgi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EtkinlikDurum" Type="Int32" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK_Etkinlik_Kullanici" FromRole="Etkinlik" ToRole="Kullanici" />
+    <NavigationProperty Name="EtkinlikKatilim" Relationship="Self.FK_EtkinlikKatilim_Etkinlik" FromRole="Etkinlik" ToRole="EtkinlikKatilim" />
+  </EntityType>
+  <EntityType Name="EtkinlikKatilim">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EtkinlikID" Type="Int32" />
+    <Property Name="KullaniciID" Type="Int32" />
+    <Property Name="Durum" Type="Int32" />
+    <NavigationProperty Name="Etkinlik" Relationship="Self.FK_EtkinlikKatilim_Etkinlik" FromRole="EtkinlikKatilim" ToRole="Etkinlik" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK_EtkinlikKatilim_Kullanici" FromRole="EtkinlikKatilim" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="KullaniciID" />
+    </Key>
+    <Property Name="KullaniciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciTel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciAdres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciSifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciFCM" Type="Int32" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Resim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Arkadas" Relationship="Self.FK_Arkadas_Kullanici" FromRole="Kullanici" ToRole="Arkadas" />
+    <NavigationProperty Name="Etkinlik" Relationship="Self.FK_Etkinlik_Kullanici" FromRole="Kullanici" ToRole="Etkinlik" />
+    <NavigationProperty Name="EtkinlikKatilim" Relationship="Self.FK_EtkinlikKatilim_Kullanici" FromRole="Kullanici" ToRole="EtkinlikKatilim" />
+    <NavigationProperty Name="KullaniciProfil" Relationship="Self.FK_KullaniciProfil_Kullanici" FromRole="Kullanici" ToRole="KullaniciProfil" />
+  </EntityType>
+  <EntityType Name="KullaniciProfil">
+    <Key>
+      <PropertyRef Name="KullaniciID" />
+    </Key>
+    <Property Name="KullaniciID" Type="Int32" Nullable="false" />
+    <Property Name="MacSayisi" Type="Int32" />
+    <Property Name="GolSayisi" Type="Int32" />
+    <Property Name="AsistSayisi" Type="Int32" />
+    <Property Name="ProfilPuani" Type="Int32" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK_KullaniciProfil_Kullanici" FromRole="KullaniciProfil" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Arkadas_Kullanici">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+    <End Role="Arkadas" Type="Self.Arkadas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="KullaniciID" />
+      </Principal>
+      <Dependent Role="Arkadas">
+        <PropertyRef Name="KullaniciID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Etkinlik_Kullanici">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+    <End Role="Etkinlik" Type="Self.Etkinlik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="KullaniciID" />
+      </Principal>
+      <Dependent Role="Etkinlik">
+        <PropertyRef Name="KullaniciID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EtkinlikKatilim_Etkinlik">
+    <End Role="Etkinlik" Type="Self.Etkinlik" Multiplicity="0..1" />
+    <End Role="EtkinlikKatilim" Type="Self.EtkinlikKatilim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Etkinlik">
+        <PropertyRef Name="EtkinlikID" />
+      </Principal>
+      <Dependent Role="EtkinlikKatilim">
+        <PropertyRef Name="EtkinlikID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EtkinlikKatilim_Kullanici">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="0..1" />
+    <End Role="EtkinlikKatilim" Type="Self.EtkinlikKatilim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="KullaniciID" />
+      </Principal>
+      <Dependent Role="EtkinlikKatilim">
+        <PropertyRef Name="KullaniciID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KullaniciProfil_Kullanici">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1" />
+    <End Role="KullaniciProfil" Type="Self.KullaniciProfil" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="KullaniciID" />
+      </Principal>
+      <Dependent Role="KullaniciProfil">
+        <PropertyRef Name="KullaniciID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FutbolZamaniEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Arkadas" EntityType="Self.Arkadas" />
+    <EntitySet Name="Etkinlik" EntityType="Self.Etkinlik" />
+    <EntitySet Name="EtkinlikKatilim" EntityType="Self.EtkinlikKatilim" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+    <EntitySet Name="KullaniciProfil" EntityType="Self.KullaniciProfil" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Arkadas_Kullanici" Association="Self.FK_Arkadas_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="Arkadas" EntitySet="Arkadas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Etkinlik_Kullanici" Association="Self.FK_Etkinlik_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="Etkinlik" EntitySet="Etkinlik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EtkinlikKatilim_Etkinlik" Association="Self.FK_EtkinlikKatilim_Etkinlik">
+      <End Role="Etkinlik" EntitySet="Etkinlik" />
+      <End Role="EtkinlikKatilim" EntitySet="EtkinlikKatilim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EtkinlikKatilim_Kullanici" Association="Self.FK_EtkinlikKatilim_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="EtkinlikKatilim" EntitySet="EtkinlikKatilim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KullaniciProfil_Kullanici" Association="Self.FK_KullaniciProfil_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="KullaniciProfil" EntitySet="KullaniciProfil" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="spArkadasIstek">
+      <Parameter Name="arkID" Mode="In" Type="Int32" />
+      <Parameter Name="kulID" Mode="In" Type="Int32" />
+      <Parameter Name="durum" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="spArkadasOlustur">
+      <Parameter Name="kulID" Mode="In" Type="Int32" />
+      <Parameter Name="arkID" Mode="In" Type="Int32" />
+      <Parameter Name="durum" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="spArkadasSil">
+      <Parameter Name="kulID" Mode="In" Type="Int32" />
+      <Parameter Name="arkID" Mode="In" Type="Int32" />
+      <Parameter Name="durum" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="spEtkinlikOluştur">
+      <Parameter Name="etkinlikAdr" Mode="In" Type="String" />
+      <Parameter Name="etkinlikTar" Mode="In" Type="DateTime" />
+      <Parameter Name="kulID" Mode="In" Type="Int32" />
+      <Parameter Name="etkinlikKontenjan" Mode="In" Type="Int32" />
+      <Parameter Name="etkinlikBilgi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spKullaniciOlustur">
+      <Parameter Name="kulUser" Mode="In" Type="String" />
+      <Parameter Name="kulAd" Mode="In" Type="String" />
+      <Parameter Name="kulSoyad" Mode="In" Type="String" />
+      <Parameter Name="kulTel" Mode="In" Type="String" />
+      <Parameter Name="kulAdres" Mode="In" Type="String" />
+      <Parameter Name="kulMail" Mode="In" Type="String" />
+      <Parameter Name="kulSifre" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

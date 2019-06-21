@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FutbolZamaniModelStoreContainer" CdmEntityContainer="FutbolZamaniEntities1">
+    <EntitySetMapping Name="Arkadas">
+      <EntityTypeMapping TypeName="FutbolZamaniModel.Arkadas">
+        <MappingFragment StoreEntitySet="Arkadas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="ArkadasID" ColumnName="ArkadasID" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Etkinlik">
+      <EntityTypeMapping TypeName="FutbolZamaniModel.Etkinlik">
+        <MappingFragment StoreEntitySet="Etkinlik">
+          <ScalarProperty Name="EtkinlikID" ColumnName="EtkinlikID" />
+          <ScalarProperty Name="EtkinlikAdres" ColumnName="EtkinlikAdres" />
+          <ScalarProperty Name="EtkinlikTarih" ColumnName="EtkinlikTarih" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="EtkinlikKontenjan" ColumnName="EtkinlikKontenjan" />
+          <ScalarProperty Name="EtkinlikBilgi" ColumnName="EtkinlikBilgi" />
+          <ScalarProperty Name="EtkinlikDurum" ColumnName="EtkinlikDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EtkinlikKatilim">
+      <EntityTypeMapping TypeName="FutbolZamaniModel.EtkinlikKatilim">
+        <MappingFragment StoreEntitySet="EtkinlikKatilim">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EtkinlikID" ColumnName="EtkinlikID" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanici">
+      <EntityTypeMapping TypeName="FutbolZamaniModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="KullaniciAd" ColumnName="KullaniciAd" />
+          <ScalarProperty Name="KullaniciSoyad" ColumnName="KullaniciSoyad" />
+          <ScalarProperty Name="KullaniciTel" ColumnName="KullaniciTel" />
+          <ScalarProperty Name="KullaniciAdres" ColumnName="KullaniciAdres" />
+          <ScalarProperty Name="KullaniciMail" ColumnName="KullaniciMail" />
+          <ScalarProperty Name="KullaniciSifre" ColumnName="KullaniciSifre" />
+          <ScalarProperty Name="KullaniciFCM" ColumnName="KullaniciFCM" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Resim" ColumnName="Resim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KullaniciProfil">
+      <EntityTypeMapping TypeName="FutbolZamaniModel.KullaniciProfil">
+        <MappingFragment StoreEntitySet="KullaniciProfil">
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="MacSayisi" ColumnName="MacSayisi" />
+          <ScalarProperty Name="GolSayisi" ColumnName="GolSayisi" />
+          <ScalarProperty Name="AsistSayisi" ColumnName="AsistSayisi" />
+          <ScalarProperty Name="ProfilPuani" ColumnName="ProfilPuani" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="FutbolZamaniModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="FutbolZamaniModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="FutbolZamaniModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="FutbolZamaniModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="FutbolZamaniModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="FutbolZamaniModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="FutbolZamaniModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="FutbolZamaniModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="spArkadasIstek" FunctionName="FutbolZamaniModel.Store.spArkadasIstek" />
+    <FunctionImportMapping FunctionImportName="spArkadasOlustur" FunctionName="FutbolZamaniModel.Store.spArkadasOlustur" />
+    <FunctionImportMapping FunctionImportName="spArkadasSil" FunctionName="FutbolZamaniModel.Store.spArkadasSil" />
+    <FunctionImportMapping FunctionImportName="spEtkinlikOluştur" FunctionName="FutbolZamaniModel.Store.spEtkinlikOluştur" />
+    <FunctionImportMapping FunctionImportName="spKullaniciOlustur" FunctionName="FutbolZamaniModel.Store.spKullaniciOlustur" />
+  </EntityContainerMapping>
+</Mapping>

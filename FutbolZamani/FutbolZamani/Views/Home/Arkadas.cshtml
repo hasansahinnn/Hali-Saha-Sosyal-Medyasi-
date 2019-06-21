@@ -1,0 +1,96 @@
+﻿@using FutbolZamani.Models;
+@model List<Kullanici>
+@{
+    ViewBag.Title = "ArkadasEkle";
+    Layout = "~/Views/Shared/AnaPanel.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="box ">
+        <div class="box-header">
+            @using (Ajax.BeginForm("ArkadasListesi", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "arkadas" }))
+            {
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3 class="box-title"><b>Arkadas Listem</b></h3>
+                    </div>
+                    <div class="col-md-2">
+                     </div>
+                    <div class="col-md-2">
+                        <div class="box-tools">
+                            <div class="input-group input-group-sm">
+                                <input type="text" name="Ad" class="form-control pull-right" placeholder="Ad Soyad">
+
+                                <div class="input-group-btn">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-default" value="Bul"><i class="fa fa-search"></i></button>
+                        <button onclick="VerileriYenile()" class="btn btn-danger" value="Yenile"><i class="fa fa-minus"> Temizle</i></button>
+                    </div>
+
+                    <div class="col-md-2">
+                        <button href="/Home/ArkadasEkle" class="btn btn-info" value="Yenile"><i class="fa fa-user"></i> Arkadaş Ekle</button>
+
+                    </div>
+
+
+
+                </div>
+            }
+            <!-- /.box-header -->
+
+            <div id="arkadas">
+                @Html.Partial("_Arkadaslarım", @Model)
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+</div>
+
+<script type="text/javascript">
+    function VerileriYenile() {
+        $.post({
+            url: '/Home/ArkadasListesi',
+            data: { Ad: '' },
+            type: 'POST',
+            dataType: 'html',
+            success: function (data) {
+                $("#arkadas").html(data);
+            },
+            error: function (data) {
+                toastr.error("Hata Oluştu!", "Dikkat");
+
+
+            }
+        });
+    }
+    function Mesaj(data) {
+        if (data.Status == 1) {
+            toastr.success(data.Mesaj, data.Baslik);
+         
+
+        }
+        else {
+            toastr.error(data.Mesaj, data.Baslik);
+        }
+        $.post({
+            url: '/Home/ArkadasListesi',
+            data: { Ad: '' },
+            type: 'POST',
+            dataType: 'html',
+            success: function (data) {
+                $("#arkadas").html(data);
+            },
+            error: function (data) {
+                toastr.error("Hata Oluştu!", "Dikkat");
+
+
+            }
+        });
+    }
+</script>

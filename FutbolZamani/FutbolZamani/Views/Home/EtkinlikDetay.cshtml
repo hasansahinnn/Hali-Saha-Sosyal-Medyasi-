@@ -1,0 +1,168 @@
+﻿@using FutbolZamani.Models;
+@model List<Kullanici>
+@{
+    ViewBag.Title = "Etkinlik Detay";
+    Layout = "~/Views/Shared/AnaPanel.cshtml";
+    Kullanici k = Session["Kullanici"] as Kullanici;
+    FutbolZamaniEntities1 db = new FutbolZamaniEntities1();
+    int etid = Convert.ToInt32(Session["etkinlikid"]);
+    Etkinlik etk = db.Etkinlik.Find(etid);
+    EtkinlikKatilim kat = db.EtkinlikKatilim.Where(x => x.KullaniciID == k.KullaniciID && x.EtkinlikID == etid).FirstOrDefault();
+    bool yetki = false;
+    if (etk.KullaniciID == k.KullaniciID)
+    {
+        yetki = true;
+    }
+
+}
+
+<div class="col-md-12">
+    <div class="box ">
+        <div class="row">
+
+            <div class="col-lg-6">
+                <h3 class="box-title"><b>Etkinlikteki Kişiler</b></h3>
+
+            </div>
+        </div>
+        @using (Ajax.BeginForm("EtkinlikDetay", "Home", new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "arkadas" }))
+        {
+
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Etkinlik ID : @etk.EtkinlikID - @etk.EtkinlikBilgi</h3>
+                </div>
+                @if (yetki == true)
+                {
+                    <div class="col-md-4">
+                        <div class="box-tools">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control pull-right" placeholder="Kullanici Adı Girin ve Etkinliğe Davet Edin" id="kullaniciid">
+
+                                <div class="input-group-btn">
+                                    <input type="button" onclick="kullanicidavet()" class="btn btn-default" value="Davet Et">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-4">
+                        @if (kat != null)
+                        {
+                            if (kat.Durum == 3)
+                            {
+                                <div class="input-group-btn col-md-push-3" id="onay">
+                                    @Ajax.ActionLink(" Kabul", "EtkinlikIslem", "Home", new {id = 1, kulid = k.KullaniciID, etkinlikid = etid}, new AjaxOptions {HttpMethod = "GET", OnSuccess = "Mesaj"}, new {@class = "btn btn-success"})
+                                    &nbsp;
+                                    @Ajax.ActionLink(" Red", "EtkinlikIslem", "Home", new {id = 0, kulid = k.KullaniciID, etkinlikid = etid}, new AjaxOptions {HttpMethod = "GET", OnSuccess = "Mesaj"}, new {@class = "btn btn-danger"})
+                                </div>
+                            }
+                        }
+                       
+
+                    </div>
+                }
+                <div class="col-md-3">
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm">
+                            <input type="text" name="Ad" class="form-control pull-right" placeholder="Ad Soyad">
+
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default" value="Bul"><i class="fa fa-search"></i></button>
+                                <input type="button" onclick="SayfayiYenile()" class="btn btn-warning" value="Yenile">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                @if (yetki == true)
+                {
+                    <div class="col-md-2">
+                        @Html.ActionLink(" Etkinliği Sil", "EtkinlikIslem", "Home", new { id = 4, kulid = k.KullaniciID, etkinlikid = etk.EtkinlikID }, new { @class = "btn btn-danger", onclick = "return confirm('Etkinliği Silmek İstediğinize Eminmisiniz?');" })
+
+                    </div>
+                }
+                else
+                {
+                    if (kat == null)
+                    {
+                        <div class="col-md-2">
+                            @Ajax.ActionLink(" Katılma İsteği Gönder", "EtkinlikIslem", "Home", new { id = 3, kulid = k.KullaniciID, etkinlikid = etk.EtkinlikID }, new AjaxOptions { HttpMethod = "GET", OnSuccess = "Mesaj" }, new { @class = "btn btn-primary" })
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-md-2">
+                            @Ajax.ActionLink("Etkinliklikten Çık", "EtkinlikIslem", "Home", new { id = 0, kulid = k.KullaniciID, etkinlikid = etk.EtkinlikID }, new AjaxOptions { HttpMethod = "GET", OnSuccess = "Mesaj" }, new { @class = "btn btn-danger" })
+                        </div>
+                    }
+                }
+
+            </div>
+        }
+
+
+        <div id="arkadas">
+            @Html.Partial("_EtkinlikDetay", @Model)
+        </div>
+
+        <!-- /.box-header -->
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</div>
+
+<script type="text/javascript">
+    function SayfayiYenile() {
+        $.post({
+            url: '/Home/EtkinlikDetay',
+            data: { Ad: '' },
+            type: 'GET',
+            dataType: 'html',
+            success: function (data) {
+                $("#arkadas").html(data);
+            },
+            error: function (data) {
+                toastr.error("Hata Oluştu!", "Dikkat");
+
+
+            }
+        });
+    }
+
+    function kullanicidavet() {
+        var kulid = document.getElementById("kullaniciid").value;
+        $.post({
+            url: '/Home/EtkinlikIslem',
+            data: { id: 5, kulad: kulid },
+            type: 'GET',
+            dataType: 'html',
+            success: function (data) {
+                toastr.success(data.Mesaj, data.Baslik);
+                SayfayiYenile();
+            },
+            error: function (data) {
+                toastr.error("Hata Oluştu!", "Dikkat");
+
+
+            }
+        });
+    }
+
+    function Mesaj(data) {
+        if (data.Status == 1) {
+            toastr.success(data.Mesaj, data.Baslik);
+            SayfayiYenile();
+            document.getElementById("onay").innerHTML = "";
+        }
+        else {
+            toastr.error(data.Mesaj, data.Baslik);
+        }
+    }
+</script>

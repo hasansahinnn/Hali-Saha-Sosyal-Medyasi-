@@ -1,0 +1,143 @@
+﻿@using FutbolZamani.Models;
+
+@{
+    Kullanici k = Session["Kullanici"] as Kullanici;
+    if (TempData["yandurum"] != null)
+    {
+         k = Session["yanpanel"] as Kullanici;
+
+    }
+  
+}
+<a href="javascript:;" class="page-quick-sidebar-toggler">
+    <i class="icon-login"></i>
+</a>
+
+<div class="page-quick-sidebar-wrapper" data-close-on-body-click="false">
+    <div class="page-quick-sidebar">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab">
+                    Profil
+                    
+                </a>
+            </li>
+           
+            @*<li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                        More
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li>
+                            <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab">
+                                <i class="icon-bell"></i> Yakında
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>*@
+        </ul>
+        @{
+
+        }
+        <div class="tab-content">
+
+            <div class="tab-pane active page-quick-sidebar-chat" id="quick_sidebar_tab_1">
+                <div class="box box-primary">
+                    <div class="box-body box-profile">
+                        <br />
+                        <br/>
+                        <div class="profile-userpic" style="text-align:-webkit-center">
+                            <img class="profile-user-img img-responsive img-circle" src="~/userimages/@k.Resim" alt="User profile picture" style="width: 200px;height: 200px" id="yanResim">
+                        </div>
+                        <h3 class="profile-username text-center" id="yanAd">@k.KullaniciAd @k.KullaniciSoyad</h3>
+
+                        <p class="text-muted text-center" id="yanUser">@k.UserName</p>
+
+                        <ul class="list-group list-group-unbordered">
+                            <li class="list-group-item">
+                                <b>Maç Sayısı</b> <a class="pull-right" id="yanMac">@k.KullaniciProfil.MacSayisi</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Gol Sayısı</b> <a class="pull-right" id="yanGol">@k.KullaniciProfil.GolSayisi</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Asist Sayısı</b> <a class="pull-right" id="yanAsist">@k.KullaniciProfil.AsistSayisi</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Profil Puani</b> <a class="pull-right" id="yanPuan">@k.KullaniciProfil.ProfilPuani</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+
+            </div>
+          
+
+
+
+
+            @*<div class="tab-pane page-quick-sidebar-settings" id="quick_sidebar_tab_3">
+                    <div class="page-quick-sidebar-settings-list">
+                        <h3 class="list-heading">General Settings</h3>
+                        <ul class="list-items borderless">
+                            <li>
+                                Enable Notifications
+                                <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                            </li>
+                            <li>
+                                Allow Tracking
+                                <input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                            </li>
+                            <li>
+                                Log Errors
+                                <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="danger" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                            </li>
+                            <li>
+                                Auto Sumbit Issues
+                                <input type="checkbox" class="make-switch" data-size="small" data-on-color="warning" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                            </li>
+                            <li>
+                                Enable SMS Alerts
+                                <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                            </li>
+                        </ul>
+                        <h3 class="list-heading">System Settings</h3>
+                        <ul class="list-items borderless">
+                            <li>
+                                Security Level
+                                <select class="form-control input-inline input-sm input-small">
+                                    <option value="1">Normal</option>
+                                    <option value="2" selected>Medium</option>
+                                    <option value="e">High</option>
+                                </select>
+                            </li>
+                            <li>
+                                Failed Email Attempts
+                                <input class="form-control input-inline input-sm input-small" value="5" />
+                            </li>
+                            <li>
+                                Secondary SMTP Port
+                                <input class="form-control input-inline input-sm input-small" value="3560" />
+                            </li>
+                            <li>
+                                Notify On System Error
+                                <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="danger" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                            </li>
+                            <li>
+                                Notify On SMTP Error
+                                <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="warning" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+                            </li>
+                        </ul>
+                        <div class="inner-content">
+                            <button class="btn btn-success">
+                                <i class="icon-settings"></i> Save Changes
+                            </button>
+                        </div>
+                    </div>
+                </div>*@
+        </div>
+    </div>
+</div>

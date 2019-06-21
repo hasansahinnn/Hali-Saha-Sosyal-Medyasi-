@@ -1,0 +1,145 @@
+﻿@using FutbolZamani.Models;
+@model List<Etkinlik>
+@{
+    ViewBag.Title = "Etkinlik";
+    Layout = "~/Views/Shared/AnaPanel.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="box ">
+      
+    @using (Ajax.BeginForm("Etkinlikler", "Home", new AjaxOptions {HttpMethod = "POST", OnSuccess = "Mesaj"}))
+    {
+        <div class="row">
+            <div class="form-group col-md-2">
+                <label> Etkinlik Adı</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Etkinlik Adı " name="EtkinlikBilgi" required>
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <label> Adres</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-home"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Adres" name="EtkinlikAdres" required>
+                </div>
+            </div>
+            <div class="form-group col-md-2">
+                <label> Kontenjan</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-group"></i>
+                    </span>
+                    <input type="number" class="form-control" placeholder="Kişi Sayısı" name="EtkinlikKontenjan" required>
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <label> Tarih</label>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                    <input type="datetime-local" class="form-control"  name="EtkinlikTarih" required="">
+                </div>
+            </div>
+            <div class="col-md-2" style="margin-top: 25px">
+                <div class="box-tools">
+                   
+                    <input type="submit" class="btn btn-success btn-group-md" value="Etkinlik Oluştur" />
+                </div>
+            </div>
+        </div>
+    }
+    
+   
+        <div class="box-header">
+
+            <div class="row">
+                <div class="col-lg-10">
+                </div>
+                <div class="col-lg-2" style="float: right">
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm">
+                            <input type="number" name="table_search" class="form-control pull-right" placeholder="Etkinlik ID" id="yeniid">
+
+                            <div class="input-group-btn">
+                                <button onclick="idbul()" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                <button onclick="SayfayiYenile()" class="btn btn-danger"><i class="fa fa-refresh"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-6">
+                <h3 class="box-title"><b>Etkinliklerim</b></h3>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        
+        <div id="arkadas">
+            @Html.Partial("_Etkinlikler",@Model)
+        </div>
+        
+   
+       
+    <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</div>
+
+<script type="text/javascript">
+    function SayfayiYenile() {
+        $.post({
+            url: '/Home/Etkinlikler',
+            data: { Ad: '', Telefon: '', KullaniciAd:'',Adres:'' },
+            type: 'GET',
+            dataType: 'html',
+            success: function (data) {
+                $("#arkadas").html(data);
+            },
+            error: function (data) {
+                toastr.error("Hata Oluştu!", "Dikkat");
+
+
+            }
+        });
+    }
+    function idbul() {
+        var sayi = document.getElementById("yeniid").value;
+        $.post({
+            url: '/Home/Etkinlikler',
+            data: { yeniid:sayi },
+            type: 'GET',
+            dataType: 'html',
+            success: function (data) {
+                $("#arkadas").html(data);
+            },
+            error: function (data) {
+                toastr.error("Hata Oluştu!", "Dikkat");
+
+
+            }
+        });
+    }
+
+
+    function Mesaj(data) {
+        if (data.Status == 1) {
+            toastr.success(data.Mesaj, data.Baslik);
+            SayfayiYenile();
+            $("form")[0].reset();
+        }
+        else {
+            toastr.error(data.Mesaj, data.Baslik);
+        }
+    }
+</script>

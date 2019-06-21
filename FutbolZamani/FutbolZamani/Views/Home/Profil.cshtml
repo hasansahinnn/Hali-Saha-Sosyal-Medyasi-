@@ -1,0 +1,202 @@
+﻿@using FutbolZamani.Models;
+@model Kullanici
+@{
+    ViewBag.Title = "Profil";
+    Layout = "~/Views/Shared/AnaPanel.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="profile-sidebar">
+            <!-- PORTLET MAIN -->
+            <div class="box box-primary">
+                <div class="box-body box-profile">
+                    <div class="profile-userpic" style="text-align:-webkit-center">
+                        <img class="profile-user-img img-responsive img-circle" src="~/userimages/@Model.Resim" alt="User profile picture" style="width:500px;height:300px">
+                    </div>
+                    <h3 class="profile-username text-center"> <label id="ad"> @Model.KullaniciAd </label> <label id="soyad">@Model.KullaniciSoyad</label></h3>
+
+                    <p class="text-muted text-center">@Model.UserName</p>
+
+                    <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                            <b>Maç Sayısı</b> <a class="pull-right">@Model.KullaniciProfil.MacSayisi</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Gol Sayısı</b> <a class="pull-right">@Model.KullaniciProfil.GolSayisi</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Asist Sayısı</b> <a class="pull-right">@Model.KullaniciProfil.AsistSayisi</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Profil Puani</b> <a class="pull-right">@Model.KullaniciProfil.ProfilPuani</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+        </div>
+        </div>
+        <div class="col-md-9">
+            <!-- BEGIN PROFILE SIDEBAR -->
+            
+            <!-- END BEGIN PROFILE SIDEBAR -->
+            <!-- BEGIN PROFILE CONTENT -->
+            <div class="profile-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="portlet light ">
+                            <div class="portlet-title tabbable-line">
+                                <div class="caption caption-md">
+                                    <i class="icon-globe theme-font hide"></i>
+                                    <span class="caption-subject font-blue-madison bold uppercase">Hesap Bilgileri</span>
+                                </div>
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#tab_1_1" data-toggle="tab"><i class="fa fa-user-secret"></i>Kişi Bilgisi</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab_1_2" data-toggle="tab"><i class="fa fa-photo"></i>Resim Ekle/Değiştir</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab_1_3" data-toggle="tab"><i class="fa fa-lock"></i>Şifreyi Değiştir</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="tab-content">
+                                    <!-- Personel Bilgileri Değiştirme -->
+                                    <div class="tab-pane active" id="tab_1_1">
+                                        @using (Ajax.BeginForm("Profil", "Home", new { kontrol = 1 }, new AjaxOptions { HttpMethod = "POST", OnSuccess = "Mesaj" }))
+                                        {
+                                            <div class="form-group">
+                                                <label class="control-label fa fa-user"> Ad</label>
+                                                <input type="text" placeholder="AD" class="form-control" name="KullaniciAd" value="@Model.KullaniciAd" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label fa fa-user"> Soyad</label>
+                                                <input type="text" placeholder="Soyad" class="form-control" name="KullaniciSoyad" value="@Model.KullaniciSoyad" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label fa fa-phone"> Tel</label>
+                                                <input type="text" placeholder="+1 646 580 DEMO (6284)" name="KullaniciTel" class="form-control" value="@Model.KullaniciTel" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label fa fa-mail-reply-all"> E-Mail</label>
+                                                <input type="text" placeholder="E-Mail" class="form-control" name="KullaniciMail" value="@Model.KullaniciMail" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label fa fa-home">Adres</label>
+                                                <input type="text" placeholder="Düzce " class="form-control" name="KullaniciAdres" value="@Model.KullaniciAdres" required/>
+                                            </div>
+                                            <div class="margiv-top-10">
+                                                <input type="submit" class="btn green" value="Bilgileri Güncelle "> 
+                                                <a onclick="SayfaYenile()" class="btn default"> Cancel </a>
+                                            </div>
+                                        }
+                                    </div>
+                                    <!-- END PERSONAL INFO TAB -->
+                                    <!-- Resim Değiştirme -->
+                                    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+                                    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+                                    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+
+                                    <div class="tab-pane" id="tab_1_2">
+                                      @using (Html.BeginForm("Profil", "Home",new { kontrol=2}, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                      {
+                                            <div class="form-group">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <img id="blah"  alt="your image" style="height:200px;width:400px;" />
+                                                    <br/>
+                                                    <div>
+                                                        <span class="">
+                                                            <input name="ProfileImage" type='file' onchange="readURL(this);" />
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="margin-top-10">
+                                                <input type="submit" class="btn green" value="Bilgileri Güncelle "> 
+                                                <a onclick="SayfaYenile()" class="btn default"> Cancel </a>
+                                            </div>
+                                        }
+                                    </div>
+                                    <!-- END CHANGE AVATAR TAB -->
+                                    <!-- Şifre Değiştirme -->
+                                   
+                                    <div class="tab-pane" id="tab_1_3">
+                                       @using (Ajax.BeginForm("Profil", "Home", new { kontrol = 3 }, new AjaxOptions { HttpMethod = "POST", OnSuccess = "Mesaj" }))
+                                       {     <div class="form-group">
+                                                <label class="control-label"> Eski Şifre</label>
+                                                <input type="password" class="form-control" name="eskisifre" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label"> Yeni Şifre</label>
+                                                <input type="password" class="form-control" name="yeni" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label"> Tekrar Yeni Şifre</label>
+                                                <input type="password" class="form-control" name="yenikontrol" required/>
+                                            </div>
+                                            <div class="margin-top-10">
+                                                <input type="submit" class="btn green" value="Şifreyi Değiştir "> 
+                                                <a onclick="SayfaYenile()" class="btn default"> Cancel </a>
+                                            </div>}
+                                    </div>
+                                   
+                                 
+                                    <!-- END CHANGE PASSWORD TAB -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PROFILE CONTENT -->
+        </div>
+    </div>
+<script type="text/javascript">
+    function SayfayiYenile() {
+        location.reload();
+    }
+
+    function Mesaj(data) {
+        if (data.Status == 1)
+        {
+            toastr.success(data.Mesaj, data.Baslik);
+            if (data.Kontrol == 1)
+            {
+                document.getElementById('ad').innerHTML = $("input[name=KullaniciAd]").val();
+                document.getElementById('soyad').innerHTML = $("input[name=KullaniciSoyad]").val();
+            }
+            if (data.Kontrol == 3)
+            {
+                $("input[name=eskisifre]").val('');
+                $("input[name=yeni]").val('');
+                $("input[name=yenikontrol]").val('');
+            }
+
+        }
+        else
+        {
+            toastr.error(data.Mesaj, data.Baslik);
+        }
+    }
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

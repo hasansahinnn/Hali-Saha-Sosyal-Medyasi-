@@ -1,0 +1,95 @@
+﻿@using FutbolZamani.Models;
+@model List<Kullanici>
+
+<div class="box-body table-responsive no-padding">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+                
+            <th><i class="fa fa-user"></i> Ad-Soyad</th>
+            <th><i class="fa fa-mail-forward"></i> Kullanici Adi</th>
+            <th><i class="fa fa-phone"></i>Telefon</th>
+            <th><i class="fa fa-home"></i>Adres</th>
+            <th><i class="fa fa-sign-in"></i> Arkadaşlık Durumu</th>
+            <th><i class="fa fa-user"></i> Kimlik</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <!-- Foreach Kullan -->
+        @if (Model != null)
+        {
+            if (TempData["istek"] != null)
+            {
+                List<Kullanici> istekler = TempData["istek"] as List<Kullanici>;
+                foreach (var item in istekler)
+                {
+                    <tr>
+                        <td>@item.KullaniciAd @item.KullaniciSoyad</td>
+                        <td>@item.UserName</td>
+                        <td>@item.KullaniciTel</td>
+                        <td>@item.KullaniciAdres</td>
+                        <td>
+                            @Ajax.ActionLink("Kabul Et", "Arkadas", "Home", new { durum = 1, id = item.KullaniciID }, new AjaxOptions { HttpMethod = "POST", OnSuccess = "Mesaj" }, new { @class = "btn btn-success" })
+                            @Ajax.ActionLink("Kabul Etme","Arkadas","Home",new {durum=2, id=item.KullaniciID},new AjaxOptions { HttpMethod="POST",OnSuccess="Mesaj"},new { @class="btn btn-warning" })
+                        </td>
+
+                    </tr>
+                }
+            }
+              
+
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.KullaniciAd @item.KullaniciSoyad</td>
+                    <td>@item.UserName</td>
+                    <td>@item.KullaniciTel</td>
+                    <td>@item.KullaniciAdres</td>
+                    <td>
+                        @Ajax.ActionLink("Arkadaşlıktan Çıkar", "Arkadas", "Home",new {durum=0, id=item.KullaniciID},new AjaxOptions { HttpMethod="POST",OnSuccess="Mesaj"},new { @class="btn btn-danger" })
+                    </td>
+                    <td>
+                        <input type="button" onclick="yanpanel(@item.KullaniciID)" value="Profil" class="btn btn-info" />
+                    </td>
+                </tr>
+            }
+        }
+        
+          
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+
+
+    function yanpanel(data) {
+        $.post({
+            url: '/Home/KullaniciBilgileri',
+            data: { id:data},
+            type: 'POST',
+            dataType: 'html',
+            success: function (data) {
+                var data = data.replace('"', '');
+                var data = data.replace('"', '');
+                var res = data.split(",");
+                document.getElementById('yanAd').innerHTML = res[0];
+                document.getElementById('yanUser').innerHTML = res[2];
+                document.getElementById('yanMac').innerHTML = res[3];
+                document.getElementById('yanGol').innerHTML = res[4];
+                document.getElementById('yanAsist').innerHTML = res[5];
+                document.getElementById('yanPuan').innerHTML = res[6];
+                $("#yanResim").attr("src", "/userimages/" + res[1] + "");
+                document.querySelector('.deneme').click();
+            },
+            error: function (data) {
+                toastr.error("Hata Oluştu!", "Dikkat");
+
+
+            }
+        });
+
+    }
+</script>

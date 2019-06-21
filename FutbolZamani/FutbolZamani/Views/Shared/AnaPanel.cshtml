@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Futbol Zamani | Kullanici Sayfasi</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Senet ve Çek İşlemleri, Tahsilatçı Sistemi, Barkod Desteği, Vadeli Ürün Satış Takibi. Senet ve Çeklerinizi kaydederek Kolayca takip edebilir, raporlama ve analiz yapabilirsiniz. " name="description" />
+    <meta content="Senet ve Çek İşlemleri,Vadeli ürün kayıt,Tahsilatçı takip,barkodlu senet ve çek kayıt,senet kaydetme,çek kaydetme" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="~/Panel_CSS/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Panel_CSS/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Panel_CSS/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Panel_CSS/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="~/Panel_CSS/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Panel_CSS/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="~/Panel_CSS/assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="~/Panel_CSS/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="~/Panel_CSS/assets/layouts/layout2/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Panel_CSS/assets/layouts/layout2/css/themes/blue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="~/Panel_CSS/assets/layouts/layout2/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME LAYOUT STYLES -->
+    <link href="~/content/toastr.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139212970-1"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+            }
+
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+
+            #customers th {
+                padding-top: 1px;
+                padding-bottom: 1px;
+                text-align: center;
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            #customers td {
+                width: auto;
+            }
+    </style>
+</head>
+<!-- END HEAD -->
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
+    @{ 
+        Kullanici k = Session["Kullanici"] as Kullanici;
+
+    }
+    <!-- BEGIN HEADER -->
+    <div class="page-header navbar navbar-fixed-top">
+        <!-- BEGIN HEADER INNER -->
+        <div class="page-header-inner ">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+               
+                @*<div class="menu-toggler sidebar-toggler" style="">
+                </div>*@
+            </div>
+           <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+          <div class="page-top">
+             <div class="top-menu">
+                 <ul class="nav navbar-nav pull-right">
+                     <li class="dropdown dropdown-user">
+                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                             <img alt="" class="img-circle" src="~/userimages/@k.Resim" style="width:50px;height:50px;margin-top:-15px"/>@Session["KullaniciAd"]
+                             <i class="fa fa-angle-down"></i>
+                         </a>
+                         <ul class="dropdown-menu dropdown-menu-default">
+
+                             <li class="divider"> </li>
+                             <li>
+                                 <a href="/Anasayfa/Cikis">Cikis &nbsp;<i class="icon-logout"></i></a>
+                             </li>
+
+                         </ul>
+                     </li>
+                     <li class="dropdown dropdown-extended quick-sidebar-toggler deneme">
+                         <span class="sr-only">Toggle Quick Sidebar</span>
+                        Profil <i class="icon-logout"></i>
+                     </li>
+                     <!-- END USER LOGIN DROPDOWN -->
+                     <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                     <!-- END QUICK SIDEBAR TOGGLER -->
+                 </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <!-- END PAGE TOP -->
+        </div>
+        <!-- END HEADER INNER -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN HEADER & CONTENT DIVIDER -->
+    <div class="clearfix"> </div>
+    <!-- END HEADER & CONTENT DIVIDER -->
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <div class="page-sidebar-wrapper">
+            <!-- END SIDEBAR -->
+            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+            <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+            <div class="page-sidebar navbar-collapse collapse">
+                <!-- BEGIN SIDEBAR MENU -->
+                <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+                <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+                <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+                <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                    <li class="nav-item start ">
+                    <a href="/Home/Etkinlikler" class="nav-link nav-toggle">
+                        <i class="icon-home"></i>
+                        <span class="title">Anasayfa</span>
+                        <span class="arrow"></span>
+                    </a>
+                        </li>
+                    <li class="nav-item start ">
+                        <a href="/Home/Profil" class="nav-link nav-toggle">
+                            <i class="icon-user"></i>
+                            <span class="title">Profil</span>
+                            <span class="arrow"></span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="fa fa-users fa-3x"></i>
+                            <span class="title">Arkadaş </span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="nav-item  ">
+                                <a href="/Home/Arkadas" class="nav-link nav-toggle">
+                                    <i class="fa fa-users fa-3x"></i>
+                                    <span class="title">Arkadaşlar </span>
+                                    <span class="arrow"></span>
+                                </a>
+
+
+                            </li>
+                            <li class="nav-item  ">
+                                <a href="/Home/ArkadasEkle" class="nav-link nav-toggle">
+                                    <i class="fa fa-user-plus fa-3x"></i>
+                                    <span class="title">Arkadaş Ekle </span>
+                                    <span class="arrow"></span>
+                                </a>
+                                
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="/Home/Etkinlikler" class="nav-link nav-toggle">
+                            <i class="fa fa-calendar-o fa-3x"></i>
+                            <span class="title">Etkinlikler </span>
+                            <span class="arrow"></span>
+                        </a>
+                       
+                    </li>
+                    
+
+                    @*<li class="nav-item  ">
+            <a href="/Cek/Anasayfa" class="nav-link nav-toggle">
+                <i class="fa fa-money"></i>
+                <span class="title">Çek İşlemleri</span>
+                <span class="arrow"></span>
+            </a>
+
+        </li>*@
+                  
+
+
+                </ul>
+                <!-- END SIDEBAR MENU -->
+            </div>
+            <!-- END SIDEBAR -->
+        </div>
+        <div id="yanpanel">
+            @Html.Partial("_YanPanel")
+
+        </div>
+        <!-- END SIDEBAR -->
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper" style="display:grid">
+            <!-- BEGIN CONTENT BODY -->
+            <div class="page-content">
+                <!-- BEGIN PAGE HEADER-->
+                <!-- BEGIN THEME PANEL -->
+                <!-- END THEME PANEL -->
+                <div>
+                    @RenderBody()
+                </div>
+
+            </div>
+        </div>
+        <!-- END CONTENT BODY -->
+    </div>
+    <!-- END CONTENT -->
+    <!-- BEGIN QUICK SIDEBAR -->
+
+    
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer">
+        <div class="page-footer-inner">
+            2019 &copy; Senet Takip Sistemi
+            &nbsp;|&nbsp;
+            @DateTime.Now.ToString("dd/MM/yyyy") &nbsp;|&nbsp;hasan@shngroup.net  &nbsp;|&nbsp; İletişim: 0(534)872 2934
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+    </div>
+        <!-- END FOOTER -->
+        <!-- BEGIN QUICK NAV -->
+        <div class="quick-nav-overlay"></div>
+        <!-- END QUICK NAV -->
+        <!--[if lt IE 9]>
+        <script src="~/Panel_CSS/assets/global/plugins/respond.min.js"></script>
+        <script src="~/Panel_CSS/assets/global/plugins/excanvas.min.js"></script>
+        <script src="~/Panel_CSS/assets/global/plugins/ie8.fix.min.js"></script>
+        <![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="~/Panel_CSS/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="~/Panel_CSS/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="~/Panel_CSS/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="~/Panel_CSS/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="~/Panel_CSS/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <script src="~/Panel_CSS/assets/global/scripts/datatable.js" type="text/javascript"></script>
+        <script src="~/Panel_CSS/assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+        <script src="~/Panel_CSS/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <script src="~/Panel_CSS/assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <!-- END THEME GLOBAL SCRIPTS -->
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="~/Panel_CSS/assets/pages/scripts/table-datatables-scroller.min.js" type="text/javascript"></script>
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <script src="~/Panel_CSS/assets/layouts/layout2/scripts/layout.min.js" type="text/javascript"></script>
+        <script src="~/Panel_CSS/assets/layouts/layout2/scripts/demo.min.js" type="text/javascript"></script>
+        <script src="~/Panel_CSS/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+        <script src="~/Panel_CSS/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+   
+    
+    
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script> 
+    <script src="~/Scripts/toastr.js"></script>
+
+        <!-- END THEME LAYOUT SCRIPTS -->
+        <script>
+                $(document).ready(function()
+                {
+                    $('#clickmewow').click(function()
+                    {
+                        $('#radio1003').attr('checked', 'checked');
+                    });
+            })
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-139212970-1');
+        </script>
+</body>
+</html>

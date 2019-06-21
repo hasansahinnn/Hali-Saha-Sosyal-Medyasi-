@@ -1,0 +1,105 @@
+﻿@using FutbolZamani.Models;
+@model List<Etkinlik>
+@{
+    List<Etkinlik> digeretkinlikler = TempData["digeretkinlikler"] as List<Etkinlik>;
+}
+<div class="box-body table-responsive no-padding">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th><i class="fa fa-user"></i>Etkinlik ID</th>
+            <th><i class="fa fa-home"></i> Etkinlik Adı</th>
+            <th><i class="fa fa-calendar-check-o"></i> Tarih</th>
+            <th><i class="fa fa-user-md"></i> Kurucusu</th>
+            <th><i class="fa fa-calculator"></i> Kentenjan</th>
+            <th><i class="fa fa-play"></i> Etkinlik Detay</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <!-- Foreach Kullan -->
+        @foreach (var item in Model)
+        {
+            Kullanici kullanici = Session["Kullanici"] as Kullanici;
+
+            FutbolZamaniEntities1 db = new FutbolZamaniEntities1();
+            Kullanici k = db.Kullanici.Find(item.KullaniciID);
+            var toplam = db.EtkinlikKatilim.Where(x => x.EtkinlikID == item.EtkinlikID && x.Durum == 2).Count();
+
+            EtkinlikKatilim etk=db.EtkinlikKatilim.Where(x=>x.EtkinlikID==item.EtkinlikID && x.KullaniciID==kullanici.KullaniciID).FirstOrDefault();
+
+
+                <tr>
+                    <td>@item.EtkinlikID</td>
+                    <td>@item.EtkinlikBilgi</td>
+                    <td>@item.EtkinlikTarih</td>
+                    <td>@k.KullaniciAd @k.KullaniciSoyad</td>
+                    <td>@toplam / @item.EtkinlikKontenjan</td>
+                    @if (etk.Durum != 3)
+                    {
+                        <td>
+                            @Html.ActionLink("Detay", "EtkinlikDetay", "Home", new { id = item.EtkinlikID }, new { @class = "btn btn-success" })
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.ActionLink("Davet Detayı", "EtkinlikDetay", "Home", new { id = item.EtkinlikID }, new { @class = "btn btn-warning" })
+                        </td>
+                    }
+
+                </tr>
+        }
+       
+
+        </tbody>
+    </table>
+</div>
+
+
+<div class="row">
+
+    <div class="col-lg-6">
+        <h3 class="box-title"><b>Diğer Etkinlikler</b></h3>
+    </div>
+</div>
+
+
+<div class="box-body table-responsive no-padding">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th><i class="fa fa-user"></i>Etkinlik ID</th>
+                <th><i class="fa fa-home"></i> Etkinlik Adı</th>
+                <th><i class="fa fa-calendar-check-o"></i> Tarih</th>
+                <th><i class="fa fa-user-md"></i> Kurucusu</th>
+                <th><i class="fa fa-calculator"></i> Kentenjan</th>
+                <th><i class="fa fa-play"></i> Etkinlik Detay</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <!-- Foreach Kullan -->
+            @foreach (var item in digeretkinlikler)
+            {
+                FutbolZamaniEntities1 db = new FutbolZamaniEntities1();
+                Kullanici k = db.Kullanici.Find(item.KullaniciID);
+                var toplam = db.EtkinlikKatilim.Where(x => x.EtkinlikID == item.EtkinlikID && x.Durum==2).Count();
+                <tr>
+                    <td>@item.EtkinlikID</td>
+                    <td>@item.EtkinlikBilgi</td>
+                    <td>@item.EtkinlikTarih</td>
+                    <td>@k.KullaniciAd @k.KullaniciSoyad</td>
+                    <td>@toplam / @item.EtkinlikKontenjan</td>
+                    <td>
+                        @Html.ActionLink("Detay", "EtkinlikDetay", "Home", new {  id = item.EtkinlikID },  new { @class = "btn btn-success" })
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
